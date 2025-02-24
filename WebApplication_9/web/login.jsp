@@ -17,6 +17,11 @@
             UserID <input type="text" name="txtUserID"/><br/>
             Password <input type="password" name="txtPassword"><br/>
             <input type="submit" value="Login"/>
+            <%
+                String aot = (String)request.getAttribute("mess");
+            %>
+            <%= aot%>
+            
         </form>
     </body>
 </html>

@@ -57,8 +57,7 @@ public class MainController extends HttpServlet {
                         UserDTO user = getUser(strUserID);
                         request.setAttribute("user", user);
                     }else{
-                        url ="login.jsp";
-                        request.setAttribute("mess", "Incorrect username or password");
+                        url ="invalid.jsp";
                     }
                 }else  if (action.equals("logout")) {
                     request.setAttribute("user", null);
