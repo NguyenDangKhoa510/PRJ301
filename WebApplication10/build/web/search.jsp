@@ -26,13 +26,13 @@
 
         <br/>
         <%
-            String searchString = request.getAttribute("searchTerm")+"";
-            searchString=searchString.equals("null")?"":searchString;
+            String searchTerm = request.getAttribute("searchTerm")+"";
+            searchTerm=searchTerm.equals("null")?"":searchTerm;
         %>
 
         <form action="MainController">
             <input type="hidden" name="action" value="search"/>
-            Search Books: <input type="text" name="searchTerm" value="<%= searchString%>"/>
+            Search Books: <input type="text" name="searchTerm" value="<%= searchTerm%>"/>
             <input type="submit" value="Search"/>
         </form>
 
@@ -50,6 +50,7 @@
                     <th>PublishYear</th>
                     <th>Price</th>
                     <th>Quantity</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -62,6 +63,9 @@
                     <td><%=b.getPublishYear()%></td>
                     <td><%=b.getPrice()%></td>
                     <td><%=b.getQuantity()%></td>
+                    <td><a href="MainController?action=delete&id=<%=b.getBookID()%>&searchTerm=<%=searchTerm%>">
+                            <img src="img/Delete-icon.png" style="height: 25px">
+                        </a></td>
                 </tr>
                 <%
                     }

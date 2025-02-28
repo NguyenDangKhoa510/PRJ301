@@ -31,9 +31,11 @@
         %>
 
         <form action="MainController">
+            
             <input type="hidden" name="action" value="search"/>
             Search Books: <input type="text" name="searchTerm" value="<%= searchTerm%>"/>
-            <input type="submit" value="Search"/>
+            <input type="submit" value="Search"/><br>
+            <a href="bookform.jsp">Add</a>
         </form>
 
         <%
